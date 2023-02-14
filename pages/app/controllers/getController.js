@@ -10,7 +10,7 @@ angular.module('getdataController', ['rentServices'])
             app.dataregistry = data.data.dataregistry;
 
             //loading data
-            $timeout(3000);
+            $timeout(4000);
 
         } else{
             app.errorMsg = data.data.message;
