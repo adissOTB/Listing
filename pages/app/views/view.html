@@ -1,0 +1,33 @@
+
+<div>
+    <br>
+    <br>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Registration Number</th>
+            <th scope="col">Type of Vehicle</th>
+            <th scope="col">Available From</th>
+            <th scope="col">Available Until</th>
+            <th scope="col">Contact Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="person in pull.dataregistry">
+            <td>{{ person.plateNumber }}</td>
+            <td>{{ person.taxiName }}</td>
+            <td>{{ person.startingDate }}</td>
+            <td>{{ person.completionDate }}</td>
+            <td>{{ person.contactNumber }}</td>
+            <td>
+                <a href="#">
+                    <button type="button" class="btn btn-primary"> Edit </button>
+                </a>
+                <a href="#">
+                    <button type="button" class="btn btn-danger"> Cancel </button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

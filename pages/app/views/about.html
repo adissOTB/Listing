@@ -1,0 +1,36 @@
+<div class="inputbox">
+    <form ng-submit="dot.dataSubmit(subData);">
+        <h1>Rent-It-Out</h1>
+        <label class="font-weight-bold">Registration Number</label>
+        <input type="text" name="plateNumber" class="input-field" placeholder="000-XXX" ng-model="dot.subData.plateNumber">
+        <br>
+        <br>
+        <label>Motor Vehicle & Brand</label>
+        <input type="text" name="taxiName" class="input-field" placeholder="(example: Toyota Yaris)" ng-model="dot.subData.taxiName">
+        <br>
+        <br>
+        <label>Start Date</label>
+        <input type="date" name="startingDate" placeholder="yyyy/mm/dd" ng-model="dot.subData.startingDate">
+        <label>End Date</label>
+        <input type="date" name="completionDate" placeholder="yyyy/mm/dd" ng-model="dot.subData.completionDate">
+        <br>
+        <br>
+        <label>Contact Number</label>
+        <input type="text" name="contactNumber" class="input-field" placeholder="0800000000" ng-model="dot.subData.contactNumber">
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary"> Place Listing </button>
+    </form>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="dot.successMsg">
+    <div class="alert alert-success">{{ dot.successMsg }}</div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="dot.errorMsg">
+    <div class="alert alert-danger">{{ dot.errorMsg }}</div>
+</div>
