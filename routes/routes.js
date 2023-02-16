@@ -48,10 +48,9 @@ router.get('/dataregistry', function(req, res) {
     });
 });
 
-//updating data
-router.patch('/dataregistry/:id', function(req, res, next){
-    //updating
-    DataPoints.findOneAndUpdate({_id: req.params.id}, function(err, result){
+//deleting data
+router.delete('/dataregistry/:id', function(req, res, next){
+    DataPoints.findOneAndRemove({id: req.params._id}, function(err, result){
         if(err){
             res.json(err);
         } else{
@@ -60,10 +59,10 @@ router.patch('/dataregistry/:id', function(req, res, next){
     });
 });
 
-
-//deleting data
-router.delete('/dataregistry/:id', function(req, res, next){
-    DataPoints.findOneAndRemove({id: req.params._id}, function(err, result){
+//updating data
+router.patch('/dataregistry/:id', function(req, res, next){
+    //updating
+    DataPoints.findOneAndUpdate({_id: req.params.id}, function(err, result){
         if(err){
             res.json(err);
         } else{
