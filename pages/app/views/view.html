@@ -2,6 +2,16 @@
 <div>
     <br>
     <br>
+
+    <button name="showAllBTN" type="button" class="btn btn-warning" ng-click="pull.showAll()"> Show All </button>
+    <button name="showLessBTN" type="button" class="btn btn-success" ng-click="pull.showLess(limit)"> Show Less </button>
+
+    <div class="row show-hide-message" ng-show="pull.successMsg">
+        <div class="alert alert-success">{{ pull.successMsg }}</div>
+    </div>
+
+    <br>
+    <br>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -13,19 +23,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="person in pull.dataregistry"> <!--controller being PULL and we use it collect the data from DB-->
+        <tr ng-repeat="person in pull.dataregistry | limitTo: pull.limit"> <!--controller being PULL and we use it collect the data from DB-->
             <td>{{ person.plateNumber }}</td>
             <td>{{ person.taxiName }}</td>
             <td>{{ person.startingDate }}</td>
             <td>{{ person.completionDate }}</td>
             <td>{{ person.contactNumber }}</td>
             <td>
-                <a href="#">
-                    <button type="button" class="btn btn-primary"> Edit </button>
-                </a>
-                <a href="#">
-                    <button type="button" class="btn btn-danger" (onclick)="pull.deleteData();"> Cancel </button>
-                </a>
+                <button type="button" class="btn btn-primary"> Edit </button>
+                <button type="button" class="btn btn-danger" (onclick)="pull.deleteData();"> Cancel </button>
             </td>
         </tr>
         </tbody>
