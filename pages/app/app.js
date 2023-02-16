@@ -1,1 +1,1 @@
-angular.module('dataApp', ['dataRoutes', 'dataController', 'rentServices', 'getdataController', 'cancelController']);
+angular.module('dataApp', ['dataRoutes', 'dataController', 'rentServices', 'getdataController']);

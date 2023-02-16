@@ -63,7 +63,7 @@ router.patch('/dataregistry/:id', function(req, res, next){
 
 //deleting data
 router.delete('/dataregistry/:id', function(req, res, next){
-    DataPoints.findOneAndRemove({_id: req.params.id}, function(err, result){
+    DataPoints.findOneAndRemove({id: req.params._id}, function(err, result){
         if(err){
             res.json(err);
         } else{

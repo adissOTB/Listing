@@ -5,6 +5,8 @@ angular.module('getdataController', ['rentServices'])
     
     app.limit = 10;
 
+
+
     Rent.getListings().then(function(data){
         app.errorMsg = false;
 
@@ -22,7 +24,7 @@ angular.module('getdataController', ['rentServices'])
 
     app.showAll = function(){
         var limit = 5;
-        if(limit == 0){
+        if(limit <= 0){
             confirm('The record is empty');
         } else {
             app.limit = undefined;
@@ -31,5 +33,19 @@ angular.module('getdataController', ['rentServices'])
 
     app.showLess = function(limit){
         app.limit = 5;
+    };
+
+    app.deleteData = function(id){
+        app.errorMsg = false;
+
+        Rent.deleteList(id).then(function(data){
+            if(data.data.success){
+                //app.successMsg = data.data.message;
+                confirm('Listing Deleted Successfully!!');
+
+            } else {
+                app.errorMsg = data.data.message;
+            }
+        });
     };
 });

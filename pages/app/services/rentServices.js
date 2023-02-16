@@ -13,8 +13,8 @@ angular.module('rentServices', [])
         return $http.get('/api/dataregistry/');
     };
 
-    rentFactory.remove = function(_id){
-        return $http.delete('api/dataregistry/' + _id);
+    rentFactory.deleteList = function(_id){
+        return $http.delete('/api/dataregistry/' + _id);
     };
 
     return rentFactory;
