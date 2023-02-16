@@ -40,7 +40,7 @@ angular.module('getdataController', ['rentServices'])
 
         Rent.deleteList(id).then(function(data){
             if(data.data.success){
-                //app.successMsg = data.data.message;
+                app.successMsg = data.data.message;
                 confirm('Listing Deleted Successfully!!');
 
             } else {
