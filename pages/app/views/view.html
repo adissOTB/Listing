@@ -5,6 +5,13 @@
 
     <button name="showAllBTN" type="button" class="btn btn-warning" ng-click="pull.showAll()"> Show All </button>
     <button name="showLessBTN" type="button" class="btn btn-success" ng-click="pull.showLess(limit)"> Show Less </button>
+    <br>
+    <br>
+    <div class="searchbar">
+        <span>
+            <input type="text" name="searchBox" placeholder="Search...">
+        </span>
+    </div>
 
     <div class="row show-hide-message" ng-show="pull.successMsg">
         <div class="alert alert-success">{{ pull.successMsg }}</div>
@@ -31,7 +38,7 @@
             <td>{{ person.contactNumber }}</td>
             <td>
                 <button type="button" class="btn btn-primary"> Edit </button>
-                <button type="button" class="btn btn-danger" (onclick)="pull.deleteData();"> Cancel </button>
+                <button type="button" class="btn btn-danger" ng-click="pull.remove(person._id);"> Cancel </button>
             </td>
         </tr>
         </tbody>

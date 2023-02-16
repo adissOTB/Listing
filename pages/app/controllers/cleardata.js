@@ -7,13 +7,12 @@ angular.module('cancelController', ['rentServices'])
         app.errorMsg = false;
 
         Rent.remove().then(function(data){
-            /*if(data.data.success){
+            if(data.data.success){
                 app.successMsg = data.data.message + confirm('Listing Deleted Successfully!!');
 
             } else {
                 app.errorMsg = data.data.message;
-            }*/
-            console.log(data);
+            }
         });
     };
 

@@ -14,7 +14,7 @@ angular.module('rentServices', [])
     };
 
     rentFactory.remove = function(_id){
-        return $http.delete('api/dataregistry/:id', _id);
+        return $http.delete('api/dataregistry/' + _id);
     };
 
     return rentFactory;
