@@ -5,8 +5,6 @@ angular.module('getdataController', ['rentServices'])
     
     app.limit = 10;
 
-
-
     Rent.getListings().then(function(data){
         app.errorMsg = false;
 
@@ -42,7 +40,6 @@ angular.module('getdataController', ['rentServices'])
             if(data.data.success){
                 app.successMsg = data.data.message;
                 confirm('Listing Deleted Successfully!!');
-
             } else {
                 app.errorMsg = data.data.message;
             }

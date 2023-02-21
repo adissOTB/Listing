@@ -25,6 +25,11 @@ var dataSchema = DataSchema({
         length: 10,
         required: true,
         unique: true
+    },
+
+    imgUpload: { type: Buffer,
+        required: true
+
     }
 });
 
