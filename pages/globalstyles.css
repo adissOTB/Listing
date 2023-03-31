@@ -67,3 +67,9 @@ a:link, a:visited {
   li {
     display: inline;
   }
+
+  .container .imaging{
+    display: block;
+    margin: 0;
+    padding: 0;
+  }

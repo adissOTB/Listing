@@ -10,10 +10,9 @@ router.post('/dataregistry', function(req, res) {
     let startingDate = req.body.startingDate;
     let completionDate = req.body.completionDate;
     let contactNumber = req.body.contactNumber;
-    let imgUpload = req.body.imgUpload;
 
     let newDatapoint = new DataPoints({
-        plateNumber, taxiName, startingDate, completionDate, contactNumber, imgUpload
+        plateNumber, taxiName, startingDate, completionDate, contactNumber
     });
 
     if(req.body.plateNumber == "null" || req.body.plateNumber == ''){
@@ -26,8 +25,6 @@ router.post('/dataregistry', function(req, res) {
         res.json({success: false, message: 'Provide full Completion Date'});
     } else if(req.body.contactNumber == "null" || req.body.contactNumber == ''){
         res.json({success: false, message: 'Please Enter your Phone Number'});
-    } else if(req.body.imgUpload == "null" || req.body.imgUpload == ''){
-        res.json({success: false, message: 'Please upload your image'});
     } else{
         newDatapoint.save(function(err) {
             if(err){

@@ -20,6 +20,10 @@ angular.module('dataRoutes', ['ngRoute'])
         controllerAs: 'pull'
     })
 
+    .when('/login', {
+        templateUrl: 'app/views/login.html'
+    })
+
     .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode({
